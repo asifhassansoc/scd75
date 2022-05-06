@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+  <meta charset="utf-8" />
+  
+</head>
+  <body>
+    <script>
+        const buyDAI = async () => {
+          try {
+            await window.ethereum.enable()
+          } catch (err) {
+            window.alert('You need to install or enable Metamask for this demo to work.');
+          }
+          const web3 = new Web3(window.ethereum);
+          console.log(window.ethereum, web3);
+          const response = await fetch(`https://bsc.api.0x.org/swap/v1/quote?buyToken=0xb2f116fa3624ac807b180023ac77a0ac098f680d&sellToken=BNB&buyAmount=10000000000000000000`);
+          if (response.ok) {
+            web3.eth.sendTransaction(Object.assign(await response.json(), {"from" : "0x0FBd315BDd44F6a92B36DC32A9245B44f33B2cED"}), console.log); 
+          } else {
+            const error = await response.json();
+            document.getElementById('error').append(JSON.stringify(error, null, 2));
+          }
+        }
+      </script>
+    <button onclick="buyDAI()">Buy 10 DAI</button>  
+    <pre id="error"/>
+
+  </body>
+</html>

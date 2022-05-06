@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase CRUD Demo</title>
+</head>
+
+<body>
+    <!-- Add the Firebase and Cloud Firestore libraries to your app -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
+
+    <!-- Add Configuration keys -->
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyDW0cR_lri_9DZAK9nUjHYy6Bs1TgdZLLc",
+            authDomain: "scd-13.firebaseapp.com",
+            projectId: "scd-13",
+            storageBucket: "scd-13.appspot.com",
+            messagingSenderId: "92526546071",
+            appId: "1:92526546071:web:68f64644a5d305be702dd2",
+            measurementId: "G-NFM1EPWF2C"
+        };
+
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        // Initialize Firestore
+        const db = firebase.firestore();
+    </script>
+
+    <!-- Main JS file -->
+    <script src="mainfire.js"></script>
+
+</body>
+
+</html>

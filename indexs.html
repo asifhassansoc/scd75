@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://unpkg.com/moralis@1.0.3/dist/moralis.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <span id="results"></span>
+
+    <div class="card border-dark mb-3" style="max-width: 18rem;">
+        <div class="card-header"> Crypto Payment Gateway
+            <p style="margin-top: 10px;" id="main-title"></p>
+        </div>
+        <div class="card-body text-dark">
+            <!-- <h5 class="card-title">Dark card title
+            
+          </h5> -->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-6" style="text-align: left;">
+                        <select class="form-control" id="avail-coins"
+                            onchange="changeFunc(value);" style="margin-left: -20px;border: 0px;">
+                            <option></option>
+                        </select>
+                    </div>
+                    <div class="col-6 text-center">
+                        <b><label id="token-price-label"></label></b>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6" style="text-align: left;">
+                    </div>
+                    <div class="col-6">
+                        <b><label id="token-usd-label"></label></b>
+                    </div>
+                </div>
+            </div>
+            <input type="text" class="form-control"
+                style="height: 50px;text-align: right;font-weight: bold;background-color: lightgrey;border-radius: 10px;"
+                value="0.0" id="input-1">
+            <label style="color: red;" id="insuff-bal"></label>
+            <div class="div_swap">
+
+            </div>
+            <!-- <select class="form-control" style="width: auto;border:0px" id="second">
+                <option value="BFET" class="opt">BFET</option>
+
+            </select> -->
+            <hr>
+            <br>
+            <!-- <hr> -->
+            
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-6" style="text-align: left;">
+                        <label id="buy-label"></label>
+                    </div>
+                    <div class="col-6 text-center">
+                        <b><label id="buy-price-label"></label></b>
+                    </div>
+                </div>
+            </div>
+
+            <input type="text" class="form-control"
+                style="height: 50px;text-align: right;font-weight: bold;background-color: lightgrey;border-radius: 10px;"
+                value="0.0"  id="input-2">
+            <button class="connectwallet" id="btn-login">CONNECT WALLET</button>
+            <button class="connectwallet" id="btn-buy" style="display: none;" onclick="purchase()">Confirm</button>
+            <button class="connectwallet" id="btn-logout">LogOut</button>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
